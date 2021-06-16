@@ -37,3 +37,38 @@ kubectl get pods
 ```
 kubectl delete pods/nginx
 ```
+# Lab-002:
+1-Criar o manifesto de Pod:     
+kuard-pod.yaml
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kuard
+spec:
+  containers:
+    - image: gcr.io/kuar-demo/kuard-amd64:blue 
+      name: kuard
+      ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+```
+2-Executar o Pod a partir do manisfesto:
+```
+kubectl apply -f kuard-pod.yaml
+```
+3-Listar os Pods:
+```
+kubectl get pods
+```
+4-Detalhes sobre os Pods:
+```
+kubectl describe pods kuard
+```
+5-Removendo um Pod:
+```
+kubectl delete pods/kuard
+ou
+kubectl delete -f kuard-pod.yaml
+```
