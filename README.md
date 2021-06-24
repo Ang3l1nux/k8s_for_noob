@@ -1,7 +1,8 @@
 # k8s_for_noob
 Dedicated repo for my study
+! 
 
-# Subir minikube 
+# UP minikube 
 
 ```
 1-Enable Hyper-v Windows 10
@@ -38,7 +39,8 @@ kubectl get pods
 kubectl delete pods/nginx
 ```
 # Lab-002:
-1-Criar o manifesto de Pod:     
+
+1-Create the manifest for Pod:     
 kuard-pod.yaml
 ```
 apiVersion: v1
@@ -54,19 +56,19 @@ spec:
           name: http
           protocol: TCP
 ```
-2-Executar o Pod a partir do manisfesto:
+2- UP Pod with manisfest:
 ```
 kubectl apply -f kuard-pod.yaml
 ```
-3-Listar os Pods:
+3-List Pods:
 ```
 kubectl get pods
 ```
-4-Detalhes sobre os Pods:
+4-Detail about Pods:
 ```
 kubectl describe pods kuard
 ```
-5-Removendo um Pod:
+5-Delete Pod:
 ```
 kubectl delete pods/kuard
 ou
